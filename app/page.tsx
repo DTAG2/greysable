@@ -1,65 +1,87 @@
-import Image from "next/image";
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import AnimatedSection from "@/components/AnimatedSection";
+import IsometricCube from "@/components/IsometricCube";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Hero />
+      <Services />
+
+      {/* Why GreySable Section */}
+      <section className="py-32 bg-black relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-grey-800" />
+
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-20 items-start">
+            <AnimatedSection>
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-grey-600 block mb-6">
+                Why Us
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase">
+                Why
+                <br />
+                Grey<span className="text-grey-500">Sable</span>
+              </h2>
+              <p className="mt-8 text-grey-400 text-lg leading-relaxed">
+                Speed and reliability. We build systems that ship fast and run
+                without babysitting. Your mission moves faster when your tools
+                just work.
+              </p>
+              <ul className="mt-10 space-y-4">
+                {[
+                  "Fast deployment, lasting results",
+                  "Built for reliability, not demos",
+                  "Direct communication, no overhead",
+                  "Outcomes over process",
+                ].map((item, index) => (
+                  <li key={item} className="flex items-center gap-4">
+                    <span className="text-xs font-mono text-grey-600">
+                      0{index + 1}
+                    </span>
+                    <span className="text-grey-300">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.2}>
+              <IsometricCube />
+            </AnimatedSection>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-32 bg-grey-950 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-grey-800" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-grey-800" />
+
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <AnimatedSection>
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-grey-600 block mb-6">
+              Get Started
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase">
+              Ready to
+              <br />
+              <span className="text-grey-500">Move Fast?</span>
+            </h2>
+            <p className="mt-8 text-grey-400 text-lg max-w-xl mx-auto">
+              Tell us what you need built. We&apos;ll tell you how fast we can
+              ship it.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block mt-10 px-8 py-4 bg-white text-black font-medium uppercase tracking-wider text-sm hover:bg-grey-200 transition-colors duration-200"
+            >
+              Get Started &rarr;
+            </Link>
+          </AnimatedSection>
         </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
