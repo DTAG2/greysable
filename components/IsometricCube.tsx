@@ -41,12 +41,14 @@ export default function IsometricCube() {
   }, []);
 
   const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    e.preventDefault();
     setIsDragging(true);
     lastMousePos.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
   }, []);
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
     if (!isDragging) return;
+    e.preventDefault();
 
     const deltaX = e.touches[0].clientX - lastMousePos.current.x;
     const deltaY = e.touches[0].clientY - lastMousePos.current.y;
@@ -71,6 +73,7 @@ export default function IsometricCube() {
         style={{
           transformStyle: "preserve-3d",
           perspective: "1000px",
+          touchAction: "none",
         }}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
