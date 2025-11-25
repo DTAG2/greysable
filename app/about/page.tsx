@@ -3,8 +3,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 import TeamMember from "@/components/TeamMember";
 
 export const metadata: Metadata = {
-  title: "About | GreySable",
-  description: "Meet the team behind GreySable. We build intelligent automation systems and AI solutions.",
+  title: "About | GraySable",
+  description: "Meet the team behind GraySable. We build intelligent automation systems and AI solutions.",
 };
 
 const teamMembers = [

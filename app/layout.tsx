@@ -11,13 +11,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dtag2.github.io/greysable"),
-  title: "GreySable | Custom Automation & AI Solutions",
-  description: "GreySable specializes in custom automation, vision AI, and hardware design. We build intelligent systems that drive results.",
+  metadataBase: new URL("https://graysable.com"),
+  title: "GraySable | Custom Automation & AI Solutions",
+  description: "GraySable specializes in custom automation, vision AI, and hardware design. We build intelligent systems that drive results.",
   keywords: ["automation", "AI", "vision AI", "hardware design", "custom software", "opsis"],
-  authors: [{ name: "GreySable" }],
+  authors: [{ name: "GraySable" }],
   openGraph: {
-    title: "GreySable | Custom Automation & AI Solutions",
+    title: "GraySable | Custom Automation & AI Solutions",
     description: "We build intelligent systems that drive results.",
     type: "website",
     images: [
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 1200,
         height: 1200,
-        alt: "GreySable",
+        alt: "GraySable",
       },
     ],
   },
   twitter: {
     card: "summary",
-    title: "GreySable | Custom Automation & AI Solutions",
+    title: "GraySable | Custom Automation & AI Solutions",
     description: "We build intelligent systems that drive results.",
     images: ["/logo.png"],
   },

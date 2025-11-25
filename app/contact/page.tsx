@@ -3,8 +3,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact | GreySable",
-  description: "Get in touch with GreySable. Let's discuss how we can help with your automation and AI needs.",
+  title: "Contact | GraySable",
+  description: "Get in touch with GraySable. Let's discuss how we can help with your automation and AI needs.",
 };
 
 export default function ContactPage() {
@@ -44,10 +44,10 @@ export default function ContactPage() {
                     Email
                   </span>
                   <a
-                    href="mailto:hello@greysable.com"
+                    href="mailto:hello@graysable.com"
                     className="text-white hover:text-gray-300 transition-colors text-lg"
                   >
-                    hello@greysable.com
+                    hello@graysable.com
                   </a>
                 </div>
 

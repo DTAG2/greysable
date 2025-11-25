@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <Services />
 
-      {/* Why GreySable Section */}
+      {/* Why GraySable Section */}
       <section className="py-32 bg-black relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gray-800" />
 
@@ -23,7 +23,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-bold tracking-tighter uppercase">
                 Why
                 <br />
-                Grey<span className="text-gray-500">Sable</span>
+                Gray<span className="text-gray-500">Sable</span>
               </h2>
               <p className="mt-8 text-gray-400 text-lg leading-relaxed">
                 Speed and reliability. We build systems that ship fast and run

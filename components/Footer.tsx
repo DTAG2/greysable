@@ -8,13 +8,13 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2">
               <img
-                src="/greysable/logo.png"
-                alt="GreySable"
+                src="/logo.png"
+                alt="GraySable"
                 width={20}
                 height={20}
               />
               <span className="text-sm font-bold tracking-tight uppercase">
-                Grey<span className="text-gray-500">Sable</span>
+                Gray<span className="text-gray-500">Sable</span>
               </span>
             </div>
             <p className="mt-4 text-sm text-gray-500 leading-relaxed max-w-xs">
@@ -61,7 +61,7 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-600 uppercase tracking-wider">
-            &copy; {new Date().getFullYear()} GreySable
+            &copy; {new Date().getFullYear()} GraySable
           </p>
           <p className="text-xs text-gray-700">
             All rights reserved

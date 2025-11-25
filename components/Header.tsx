@@ -17,14 +17,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           <img
-            src="/greysable/logo.png"
-            alt="GreySable"
+            src="/logo.png"
+            alt="GraySable"
             width={20}
             height={20}
             className="group-hover:opacity-90 transition-opacity"
           />
           <span className="text-sm font-bold tracking-tight uppercase">
-            Grey<span className="text-gray-500">Sable</span>
+            Gray<span className="text-gray-500">Sable</span>
           </span>
         </Link>
 
