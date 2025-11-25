@@ -13,7 +13,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-black/95 backdrop-blur-sm border-b border-grey-800">
+    <header className="fixed top-0 left-0 right-0 z-40 bg-black/95 backdrop-blur-sm border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           <img
@@ -24,7 +24,7 @@ export default function Header() {
             className="group-hover:opacity-90 transition-opacity"
           />
           <span className="text-sm font-bold tracking-tight uppercase">
-            Grey<span className="text-grey-500">Sable</span>
+            Grey<span className="text-gray-500">Sable</span>
           </span>
         </Link>
 
@@ -36,7 +36,7 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 className={`relative text-xs font-medium uppercase tracking-widest transition-colors duration-150 ${
-                  isActive ? "text-white" : "text-grey-500 hover:text-white"
+                  isActive ? "text-white" : "text-gray-500 hover:text-white"
                 }`}
               >
                 {link.label}

@@ -31,7 +31,7 @@ export default function ContactForm() {
         transition={{ duration: 0.2 }}
         className="text-center py-16"
       >
-        <div className="w-16 h-16 mx-auto mb-6 border border-grey-600 flex items-center justify-center">
+        <div className="w-16 h-16 mx-auto mb-6 border border-gray-600 flex items-center justify-center">
           <svg
             className="w-6 h-6 text-white"
             fill="none"
@@ -47,7 +47,7 @@ export default function ContactForm() {
           </svg>
         </div>
         <h3 className="text-xl font-bold uppercase tracking-tight mb-2">Message Sent</h3>
-        <p className="text-grey-500 text-sm">
+        <p className="text-gray-500 text-sm">
           We&apos;ll get back to you as soon as possible.
         </p>
       </motion.div>
@@ -60,7 +60,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="name"
-            className="block text-xs font-medium uppercase tracking-wider text-grey-400 mb-3"
+            className="block text-xs font-medium uppercase tracking-wider text-gray-400 mb-3"
           >
             Name
           </label>
@@ -70,7 +70,7 @@ export default function ContactForm() {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-4 py-3 bg-black border border-grey-800 focus:outline-none focus:border-grey-500 transition-colors duration-150 text-white placeholder:text-grey-700"
+            className="w-full px-4 py-3 bg-black border border-gray-800 focus:outline-none focus:border-gray-500 transition-colors duration-150 text-white placeholder:text-gray-700"
             placeholder="Your name"
           />
         </div>
@@ -78,7 +78,7 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="email"
-            className="block text-xs font-medium uppercase tracking-wider text-grey-400 mb-3"
+            className="block text-xs font-medium uppercase tracking-wider text-gray-400 mb-3"
           >
             Email
           </label>
@@ -90,7 +90,7 @@ export default function ContactForm() {
             onChange={(e) =>
               setFormData({ ...formData, email: e.target.value })
             }
-            className="w-full px-4 py-3 bg-black border border-grey-800 focus:outline-none focus:border-grey-500 transition-colors duration-150 text-white placeholder:text-grey-700"
+            className="w-full px-4 py-3 bg-black border border-gray-800 focus:outline-none focus:border-gray-500 transition-colors duration-150 text-white placeholder:text-gray-700"
             placeholder="your@email.com"
           />
         </div>
@@ -99,7 +99,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="block text-xs font-medium uppercase tracking-wider text-grey-400 mb-3"
+          className="block text-xs font-medium uppercase tracking-wider text-gray-400 mb-3"
         >
           Message
         </label>
@@ -111,7 +111,7 @@ export default function ContactForm() {
           onChange={(e) =>
             setFormData({ ...formData, message: e.target.value })
           }
-          className="w-full px-4 py-3 bg-black border border-grey-800 focus:outline-none focus:border-grey-500 transition-colors duration-150 text-white placeholder:text-grey-700 resize-none"
+          className="w-full px-4 py-3 bg-black border border-gray-800 focus:outline-none focus:border-gray-500 transition-colors duration-150 text-white placeholder:text-gray-700 resize-none"
           placeholder="Tell us about your project..."
         />
       </div>
@@ -119,7 +119,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full md:w-auto px-8 py-4 bg-white text-black font-medium uppercase tracking-wider text-sm hover:bg-grey-200 transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full md:w-auto px-8 py-4 bg-white text-black font-medium uppercase tracking-wider text-sm hover:bg-gray-200 transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? "Sending..." : "Send Message"}
       </button>

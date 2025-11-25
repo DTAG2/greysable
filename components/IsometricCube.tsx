@@ -103,7 +103,7 @@ export default function IsometricCube() {
                 marginTop: `-${sphereRadius}px`,
                 borderRadius: "50%",
                 border: "1px solid",
-                borderColor: "var(--grey-600)",
+                borderColor: "var(--gray-600)",
                 transformStyle: "preserve-3d",
                 transform: `rotateY(${angle}deg)`,
               }}
@@ -125,7 +125,7 @@ export default function IsometricCube() {
                   marginTop: `-${latRadius}px`,
                   borderRadius: "50%",
                   border: "1px solid",
-                  borderColor: "var(--grey-600)",
+                  borderColor: "var(--gray-600)",
                   transformStyle: "preserve-3d",
                   transform: `rotateX(90deg) translateZ(${yOffset}px)`,
                 }}
@@ -143,7 +143,7 @@ export default function IsometricCube() {
               marginTop: `-${sphereRadius}px`,
               borderRadius: "50%",
               border: "2px solid",
-              borderColor: "var(--grey-500)",
+              borderColor: "var(--gray-500)",
               transformStyle: "preserve-3d",
               transform: "rotateX(90deg)",
             }}
@@ -157,12 +157,12 @@ export default function IsometricCube() {
               animation: "tesseractOuter 12s linear infinite",
             }}
           >
-            <div className="absolute w-full h-full border border-grey-400" style={{ transform: "translateZ(40px)" }} />
-            <div className="absolute w-full h-full border border-grey-400" style={{ transform: "translateZ(-40px)" }} />
-            <div className="absolute w-full h-full border border-grey-400" style={{ transform: "rotateY(90deg) translateZ(40px)" }} />
-            <div className="absolute w-full h-full border border-grey-400" style={{ transform: "rotateY(90deg) translateZ(-40px)" }} />
-            <div className="absolute w-full h-full border border-grey-400" style={{ transform: "rotateX(90deg) translateZ(40px)" }} />
-            <div className="absolute w-full h-full border border-grey-400" style={{ transform: "rotateX(90deg) translateZ(-40px)" }} />
+            <div className="absolute w-full h-full border border-gray-400" style={{ transform: "translateZ(40px)" }} />
+            <div className="absolute w-full h-full border border-gray-400" style={{ transform: "translateZ(-40px)" }} />
+            <div className="absolute w-full h-full border border-gray-400" style={{ transform: "rotateY(90deg) translateZ(40px)" }} />
+            <div className="absolute w-full h-full border border-gray-400" style={{ transform: "rotateY(90deg) translateZ(-40px)" }} />
+            <div className="absolute w-full h-full border border-gray-400" style={{ transform: "rotateX(90deg) translateZ(40px)" }} />
+            <div className="absolute w-full h-full border border-gray-400" style={{ transform: "rotateX(90deg) translateZ(-40px)" }} />
           </div>
 
           {/* Tesseract - Inner cube */}
@@ -173,12 +173,12 @@ export default function IsometricCube() {
               animation: "tesseractInner 8s linear infinite reverse",
             }}
           >
-            <div className="absolute w-full h-full border border-grey-300 bg-grey-700/30" style={{ transform: "translateZ(16px)" }} />
-            <div className="absolute w-full h-full border border-grey-300 bg-grey-700/30" style={{ transform: "translateZ(-16px)" }} />
-            <div className="absolute w-full h-full border border-grey-300 bg-grey-700/30" style={{ transform: "rotateY(90deg) translateZ(16px)" }} />
-            <div className="absolute w-full h-full border border-grey-300 bg-grey-700/30" style={{ transform: "rotateY(90deg) translateZ(-16px)" }} />
-            <div className="absolute w-full h-full border border-grey-300 bg-grey-700/30" style={{ transform: "rotateX(90deg) translateZ(16px)" }} />
-            <div className="absolute w-full h-full border border-grey-300 bg-grey-700/30" style={{ transform: "rotateX(90deg) translateZ(-16px)" }} />
+            <div className="absolute w-full h-full border border-gray-300 bg-gray-700/30" style={{ transform: "translateZ(16px)" }} />
+            <div className="absolute w-full h-full border border-gray-300 bg-gray-700/30" style={{ transform: "translateZ(-16px)" }} />
+            <div className="absolute w-full h-full border border-gray-300 bg-gray-700/30" style={{ transform: "rotateY(90deg) translateZ(16px)" }} />
+            <div className="absolute w-full h-full border border-gray-300 bg-gray-700/30" style={{ transform: "rotateY(90deg) translateZ(-16px)" }} />
+            <div className="absolute w-full h-full border border-gray-300 bg-gray-700/30" style={{ transform: "rotateX(90deg) translateZ(16px)" }} />
+            <div className="absolute w-full h-full border border-gray-300 bg-gray-700/30" style={{ transform: "rotateX(90deg) translateZ(-16px)" }} />
           </div>
 
           {/* Connecting edges - tesseract links */}
@@ -194,7 +194,7 @@ export default function IsometricCube() {
           ].map((corner, i) => (
             <div
               key={`edge-${i}`}
-              className="absolute top-1/2 left-1/2 w-px bg-grey-500"
+              className="absolute top-1/2 left-1/2 w-px bg-gray-500"
               style={{
                 height: "24px",
                 transformOrigin: "center top",
@@ -209,7 +209,7 @@ export default function IsometricCube() {
 
           {/* Axis indicators - precision engineering look */}
           <div
-            className="absolute top-1/2 left-1/2 h-px bg-grey-500"
+            className="absolute top-1/2 left-1/2 h-px bg-gray-500"
             style={{
               width: `${sphereRadius * 2 + 20}px`,
               marginLeft: `-${sphereRadius + 10}px`,
@@ -217,7 +217,7 @@ export default function IsometricCube() {
             }}
           />
           <div
-            className="absolute top-1/2 left-1/2 h-px bg-grey-500"
+            className="absolute top-1/2 left-1/2 h-px bg-gray-500"
             style={{
               width: `${sphereRadius * 2 + 20}px`,
               marginLeft: `-${sphereRadius + 10}px`,
@@ -225,7 +225,7 @@ export default function IsometricCube() {
             }}
           />
           <div
-            className="absolute top-1/2 left-1/2 w-px bg-grey-500"
+            className="absolute top-1/2 left-1/2 w-px bg-gray-500"
             style={{
               height: `${sphereRadius * 2 + 20}px`,
               marginTop: `-${sphereRadius + 10}px`,

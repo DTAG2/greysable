@@ -29,7 +29,7 @@ export default function AboutPage() {
       <section className="py-24 relative">
         <div className="max-w-5xl mx-auto px-6">
           <AnimatedSection>
-            <span className="text-xs font-medium uppercase tracking-[0.3em] text-grey-600 block mb-6">
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-gray-600 block mb-6">
               About
             </span>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tighter uppercase leading-[0.9]">
@@ -37,9 +37,9 @@ export default function AboutPage() {
               <br />
               The Future
               <br />
-              <span className="text-grey-500">Thoughtfully</span>
+              <span className="text-gray-500">Thoughtfully</span>
             </h1>
-            <p className="mt-10 text-xl text-grey-400 max-w-xl leading-relaxed">
+            <p className="mt-10 text-xl text-gray-400 max-w-xl leading-relaxed">
               We&apos;re a small team with big ambitions. Our focus is simple:
               build technology that works, scales, and delivers measurable
               outcomes.
@@ -49,17 +49,17 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-24 bg-grey-950 relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-grey-800" />
+      <section className="py-24 bg-gray-950 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gray-800" />
 
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-px bg-grey-800">
+          <div className="grid md:grid-cols-2 gap-px bg-gray-800">
             <AnimatedSection className="bg-black p-12">
-              <span className="text-xs font-medium uppercase tracking-[0.3em] text-grey-600 block mb-4">
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-gray-600 block mb-4">
                 01
               </span>
               <h2 className="text-2xl font-bold uppercase tracking-tight mb-6">Our Mission</h2>
-              <p className="text-grey-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed">
                 Ship systems that work. No bloat, no feature creep. We build
                 automation that accelerates your mission—fast deployment,
                 reliable operation, measurable results.
@@ -67,11 +67,11 @@ export default function AboutPage() {
             </AnimatedSection>
 
             <AnimatedSection delay={0.1} className="bg-black p-12">
-              <span className="text-xs font-medium uppercase tracking-[0.3em] text-grey-600 block mb-4">
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-gray-600 block mb-4">
                 02
               </span>
               <h2 className="text-2xl font-bold uppercase tracking-tight mb-6">Our Approach</h2>
-              <p className="text-grey-400 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed">
                 Understand the objective. Design the system. Execute. We cut
                 through complexity to deliver solutions that solve the actual
                 problem—not the one that&apos;s easiest to build.
@@ -83,11 +83,11 @@ export default function AboutPage() {
 
       {/* Values Section */}
       <section className="py-24 relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-grey-800" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gray-800" />
 
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection className="mb-16">
-            <span className="text-xs font-medium uppercase tracking-[0.3em] text-grey-600 block mb-4">
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-gray-600 block mb-4">
               Values
             </span>
             <h2 className="text-4xl font-bold tracking-tighter uppercase">
@@ -118,13 +118,13 @@ export default function AboutPage() {
             ].map((value, index) => (
               <AnimatedSection key={value.title} delay={index * 0.1}>
                 <div>
-                  <span className="text-xs font-mono text-grey-600 block mb-4">
+                  <span className="text-xs font-mono text-gray-600 block mb-4">
                     {value.number}
                   </span>
                   <h3 className="text-xl font-bold uppercase tracking-tight mb-3">
                     {value.title}
                   </h3>
-                  <p className="text-grey-500 leading-relaxed">
+                  <p className="text-gray-500 leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -135,16 +135,16 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 bg-grey-950 relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-grey-800" />
+      <section className="py-24 bg-gray-950 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gray-800" />
 
         <div className="max-w-7xl mx-auto px-6">
           <AnimatedSection className="mb-16">
-            <span className="text-xs font-medium uppercase tracking-[0.3em] text-grey-600 block mb-4">
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-gray-600 block mb-4">
               Team
             </span>
             <h2 className="text-4xl font-bold tracking-tighter uppercase">The Team</h2>
-            <p className="mt-4 text-grey-500">
+            <p className="mt-4 text-gray-500">
               The people behind the precision
             </p>
           </AnimatedSection>
