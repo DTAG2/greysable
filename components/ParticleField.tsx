@@ -5,10 +5,13 @@ import { useEffect, useRef } from "react";
 interface Particle {
   x: number;
   y: number;
-  baseX: number;
-  baseY: number;
   size: number;
   opacity: number;
+  velocityX: number;
+  velocityY: number;
+  drift: number;
+  driftSpeed: number;
+  driftOffset: number;
 }
 
 export default function ParticleField() {
@@ -32,23 +35,20 @@ export default function ParticleField() {
 
     const initParticles = () => {
       particlesRef.current = [];
-      const spacing = 50;
-      const cols = Math.ceil(canvas.width / spacing);
-      const rows = Math.ceil(canvas.height / spacing);
+      const particleCount = Math.floor((canvas.width * canvas.height) / 8000);
 
-      for (let i = 0; i < cols; i++) {
-        for (let j = 0; j < rows; j++) {
-          const x = i * spacing + spacing / 2;
-          const y = j * spacing + spacing / 2;
-          particlesRef.current.push({
-            x,
-            y,
-            baseX: x,
-            baseY: y,
-            size: Math.random() * 1.5 + 0.5,
-            opacity: Math.random() * 0.3 + 0.1,
-          });
-        }
+      for (let i = 0; i < particleCount; i++) {
+        particlesRef.current.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          size: Math.random() * 2 + 0.5,
+          opacity: Math.random() * 0.4 + 0.1,
+          velocityX: (Math.random() - 0.5) * 0.3,
+          velocityY: Math.random() * 0.2 + 0.1,
+          drift: Math.random() * 2 - 1,
+          driftSpeed: Math.random() * 0.01 + 0.005,
+          driftOffset: Math.random() * Math.PI * 2,
+        });
       }
     };
 
@@ -60,29 +60,44 @@ export default function ParticleField() {
       mouseRef.current = { x: -1000, y: -1000 };
     };
 
+    let time = 0;
+
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      time += 1;
 
       const mouse = mouseRef.current;
-      const interactionRadius = 150;
-      const pushStrength = 80;
+      const interactionRadius = 120;
+      const pushStrength = 3;
 
       particlesRef.current.forEach((particle) => {
+        // Gentle snowflake drift
+        const sway = Math.sin(time * particle.driftSpeed + particle.driftOffset) * particle.drift;
+
+        particle.x += particle.velocityX + sway * 0.3;
+        particle.y += particle.velocityY;
+
+        // Mouse interaction - push particles away
         const dx = mouse.x - particle.x;
         const dy = mouse.y - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
         if (distance < interactionRadius && distance > 0) {
           const force = (interactionRadius - distance) / interactionRadius;
-          const angle = Math.atan2(dy, dx);
-          const pushX = Math.cos(angle) * force * pushStrength;
-          const pushY = Math.sin(angle) * force * pushStrength;
+          particle.x -= (dx / distance) * force * pushStrength;
+          particle.y -= (dy / distance) * force * pushStrength;
+        }
 
-          particle.x = particle.baseX - pushX;
-          particle.y = particle.baseY - pushY;
-        } else {
-          particle.x += (particle.baseX - particle.x) * 0.1;
-          particle.y += (particle.baseY - particle.y) * 0.1;
+        // Wrap around edges
+        if (particle.y > canvas.height + 10) {
+          particle.y = -10;
+          particle.x = Math.random() * canvas.width;
+        }
+        if (particle.x > canvas.width + 10) {
+          particle.x = -10;
+        }
+        if (particle.x < -10) {
+          particle.x = canvas.width + 10;
         }
 
         ctx.beginPath();
