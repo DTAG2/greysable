@@ -12,7 +12,7 @@ export default function Home() {
 
       {/* Why GraySable Section */}
       <section className="py-32 bg-black relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gray-800" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-white/20" />
 
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-20 items-start">
@@ -55,8 +55,8 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-32 bg-gray-950 relative">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gray-800" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gray-800" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-white/20" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-white/20" />
 
         <div className="max-w-4xl mx-auto px-6 text-center">
           <AnimatedSection>

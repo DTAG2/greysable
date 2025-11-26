@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ParticleField from "./ParticleField";
 
 export default function Hero() {
   return (
@@ -6,7 +7,7 @@ export default function Hero() {
       {/* Grid pattern background */}
       <div className="absolute inset-0 bg-black">
         <div
-          className="absolute inset-0 opacity-[0.08]"
+          className="absolute inset-0 opacity-[0.12]"
           style={{
             backgroundImage: `
               linear-gradient(90deg, white 1px, transparent 1px),
@@ -17,8 +18,11 @@ export default function Hero() {
         />
       </div>
 
+      {/* Interactive particle field */}
+      <ParticleField />
+
       {/* Diagonal accent lines */}
-      <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden opacity-5">
+      <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden opacity-10">
         <div className="absolute top-0 right-0 w-[200%] h-px bg-white transform rotate-45 origin-top-right translate-y-32" />
         <div className="absolute top-0 right-0 w-[200%] h-px bg-white transform rotate-45 origin-top-right translate-y-64" />
         <div className="absolute top-0 right-0 w-[200%] h-px bg-white transform rotate-45 origin-top-right translate-y-96" />
@@ -64,16 +68,16 @@ export default function Hero() {
       </div>
 
       {/* Bottom accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
       {/* Corner accents */}
       <div className="absolute bottom-8 left-8 flex flex-col gap-1">
-        <div className="w-8 h-px bg-gray-700" />
-        <div className="w-4 h-px bg-gray-800" />
+        <div className="w-12 h-px bg-white/40" />
+        <div className="w-6 h-px bg-white/20" />
       </div>
       <div className="absolute bottom-8 right-8 flex flex-col gap-1 items-end">
-        <div className="w-8 h-px bg-gray-700" />
-        <div className="w-4 h-px bg-gray-800" />
+        <div className="w-12 h-px bg-white/40" />
+        <div className="w-6 h-px bg-white/20" />
       </div>
     </section>
   );
