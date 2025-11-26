@@ -21,13 +21,6 @@ export default function Hero() {
       {/* Interactive particle field */}
       <ParticleField />
 
-      {/* Diagonal accent lines */}
-      <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden opacity-10">
-        <div className="absolute top-0 right-0 w-[200%] h-px bg-white transform rotate-45 origin-top-right translate-y-32" />
-        <div className="absolute top-0 right-0 w-[200%] h-px bg-white transform rotate-45 origin-top-right translate-y-64" />
-        <div className="absolute top-0 right-0 w-[200%] h-px bg-white transform rotate-45 origin-top-right translate-y-96" />
-      </div>
-
       <div className="relative z-10 max-w-5xl mx-auto px-6">
         <div className="mb-8 animate-fade-in">
           <span className="text-xs font-medium uppercase tracking-[0.3em] text-gray-500">
@@ -69,16 +62,6 @@ export default function Hero() {
 
       {/* Bottom accent */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
-
-      {/* Corner accents */}
-      <div className="absolute bottom-8 left-8 flex flex-col gap-1">
-        <div className="w-12 h-px bg-white/40" />
-        <div className="w-6 h-px bg-white/20" />
-      </div>
-      <div className="absolute bottom-8 right-8 flex flex-col gap-1 items-end">
-        <div className="w-12 h-px bg-white/40" />
-        <div className="w-6 h-px bg-white/20" />
-      </div>
     </section>
   );
 }
