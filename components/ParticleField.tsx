@@ -36,18 +36,36 @@ export default function ParticleField() {
     const initParticles = () => {
       particlesRef.current = [];
 
-      // Dense particles at the top (like fog/mist)
-      const topDenseCount = Math.floor((canvas.width * 150) / 800);
+      // Very dense particles at the top (smoke/fog effect)
+      const topDenseCount = Math.floor((canvas.width * 400) / 800);
       for (let i = 0; i < topDenseCount; i++) {
-        // Weighted toward top - exponential distribution
-        const yWeight = Math.pow(Math.random(), 0.5);
-        const y = yWeight * canvas.height * 0.4;
+        // Heavily weighted toward top
+        const yWeight = Math.pow(Math.random(), 0.3);
+        const y = yWeight * canvas.height * 0.5;
 
         particlesRef.current.push({
           x: Math.random() * canvas.width,
           y,
-          size: Math.random() * 1.5 + 0.3,
-          baseOpacity: Math.random() * 0.35 + 0.15,
+          size: Math.random() * 2.5 + 0.5,
+          baseOpacity: Math.random() * 0.5 + 0.2,
+          velocityX: (Math.random() - 0.5) * 0.15,
+          velocityY: Math.random() * 0.12 + 0.03,
+          drift: Math.random() * 1.2 - 0.6,
+          driftSpeed: Math.random() * 0.006 + 0.002,
+          driftOffset: Math.random() * Math.PI * 2,
+        });
+      }
+
+      // Medium density in upper-middle area
+      const midCount = Math.floor((canvas.width * 200) / 800);
+      for (let i = 0; i < midCount; i++) {
+        const y = Math.random() * canvas.height * 0.6;
+
+        particlesRef.current.push({
+          x: Math.random() * canvas.width,
+          y,
+          size: Math.random() * 2 + 0.4,
+          baseOpacity: Math.random() * 0.35 + 0.1,
           velocityX: (Math.random() - 0.5) * 0.2,
           velocityY: Math.random() * 0.15 + 0.05,
           drift: Math.random() * 1.5 - 0.75,
@@ -57,13 +75,13 @@ export default function ParticleField() {
       }
 
       // Scattered particles throughout (lighter, ambient)
-      const scatteredCount = Math.floor((canvas.width * canvas.height) / 15000);
+      const scatteredCount = Math.floor((canvas.width * canvas.height) / 12000);
       for (let i = 0; i < scatteredCount; i++) {
         particlesRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           size: Math.random() * 1.8 + 0.4,
-          baseOpacity: Math.random() * 0.25 + 0.08,
+          baseOpacity: Math.random() * 0.2 + 0.05,
           velocityX: (Math.random() - 0.5) * 0.25,
           velocityY: Math.random() * 0.18 + 0.08,
           drift: Math.random() * 2 - 1,
@@ -88,20 +106,20 @@ export default function ParticleField() {
       time += 1;
 
       const mouse = mouseRef.current;
-      const interactionRadius = 100;
-      const pushStrength = 2.5;
+      const interactionRadius = 80;
+      const pushStrength = 2;
 
       // Center exclusion zone (where text is)
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
-      const exclusionWidth = Math.min(600, canvas.width * 0.6);
-      const exclusionHeight = Math.min(400, canvas.height * 0.45);
+      const exclusionWidth = Math.min(550, canvas.width * 0.55);
+      const exclusionHeight = Math.min(350, canvas.height * 0.4);
 
       particlesRef.current.forEach((particle) => {
         // Gentle snowflake drift
         const sway = Math.sin(time * particle.driftSpeed + particle.driftOffset) * particle.drift;
 
-        particle.x += particle.velocityX + sway * 0.25;
+        particle.x += particle.velocityX + sway * 0.2;
         particle.y += particle.velocityY;
 
         // Mouse interaction - push particles away
@@ -130,8 +148,8 @@ export default function ParticleField() {
         // Calculate opacity based on position
         let opacity = particle.baseOpacity;
 
-        // Fade based on vertical position (denser at top)
-        const verticalFade = 1 - (particle.y / canvas.height) * 0.6;
+        // Fade based on vertical position (much denser at top)
+        const verticalFade = 1 - (particle.y / canvas.height) * 0.7;
         opacity *= verticalFade;
 
         // Reduce opacity in center exclusion zone (where content is)
@@ -142,7 +160,7 @@ export default function ParticleField() {
           const xFade = distFromCenterX / (exclusionWidth / 2);
           const yFade = distFromCenterY / (exclusionHeight / 2);
           const centerFade = Math.max(xFade, yFade);
-          opacity *= Math.pow(centerFade, 0.8);
+          opacity *= Math.pow(centerFade, 0.6);
         }
 
         ctx.beginPath();
