@@ -1,15 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface TeamMemberProps {
   name: string;
   role: string;
   bio: string;
   initials: string;
+  image?: string;
 }
 
-export default function TeamMember({ name, role, bio, initials }: TeamMemberProps) {
+export default function TeamMember({ name, role, bio, initials, image }: TeamMemberProps) {
   return (
     <motion.div
       whileHover={{ y: -2 }}
@@ -18,12 +20,22 @@ export default function TeamMember({ name, role, bio, initials }: TeamMemberProp
     >
       {/* Avatar area */}
       <div className="aspect-[4/3] bg-gray-900 border-b border-gray-800 flex items-center justify-center relative overflow-hidden">
-        <span className="text-5xl font-bold text-gray-700 group-hover:text-gray-500 transition-colors">
-          {initials}
-        </span>
+        {image ? (
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover object-top grayscale"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        ) : (
+          <span className="text-5xl font-bold text-gray-700 group-hover:text-gray-500 transition-colors">
+            {initials}
+          </span>
+        )}
         {/* Corner accent */}
-        <div className="absolute top-4 right-4 w-3 h-3 border-t border-r border-gray-700" />
-        <div className="absolute bottom-4 left-4 w-3 h-3 border-b border-l border-gray-700" />
+        <div className="absolute top-4 right-4 w-3 h-3 border-t border-r border-gray-700 z-10" />
+        <div className="absolute bottom-4 left-4 w-3 h-3 border-b border-l border-gray-700 z-10" />
       </div>
 
       {/* Content */}

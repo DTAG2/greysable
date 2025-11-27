@@ -9,16 +9,18 @@ export const metadata: Metadata = {
 
 const teamMembers = [
   {
-    name: "Team Member 1",
+    name: "Daniel Gonzales",
     role: "Co-Founder",
-    bio: "Background in FPGA development and signal processing. Handles hardware design when projects require physical components.",
-    initials: "TM",
+    bio: "Computer engineer specializing in hardware design, software automation, and systems integration at GraySable.",
+    initials: "DG",
+    image: "/team/daniel.jpg",
   },
   {
-    name: "Team Member 2",
+    name: "Oliver Gonzales",
     role: "Co-Founder",
-    bio: "Background in automation, databases, and software architecture. Handles system design and software integration.",
-    initials: "TM",
+    bio: "Engineer focused on algorithmic systems, data architecture, and cybersecurity at GraySable.",
+    initials: "OG",
+    image: "/team/oliver.jpg",
   },
 ];
 
