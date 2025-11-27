@@ -137,9 +137,6 @@ export default function AboutPage() {
               Team
             </span>
             <h2 className="text-4xl font-bold tracking-tighter uppercase">The Team</h2>
-            <p className="mt-4 text-gray-500">
-              Engineers who build both software and hardware.
-            </p>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl items-stretch">
