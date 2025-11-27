@@ -22,7 +22,7 @@ const teamMembers = [
     bio: "Engineer focused on algorithmic systems, data architecture, and cybersecurity at GraySable.",
     initials: "OG",
     image: "/team/oliver.jpg",
-    imagePosition: "center 20%",
+    imagePosition: "center 35%",
   },
 ];
 

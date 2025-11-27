@@ -20,7 +20,7 @@ export default function TeamMember({ name, role, bio, initials, image, imagePosi
       className="group bg-gray-950 border border-gray-800 hover:border-gray-600 transition-colors duration-300 h-full flex flex-col"
     >
       {/* Avatar area */}
-      <div className="aspect-[4/3] bg-gray-900 border-b border-gray-800 flex items-center justify-center relative overflow-hidden">
+      <div className="aspect-[4/3] bg-black border-b border-gray-800 flex items-center justify-center relative overflow-hidden">
         {image ? (
           <Image
             src={image}
@@ -36,8 +36,8 @@ export default function TeamMember({ name, role, bio, initials, image, imagePosi
           </span>
         )}
         {/* Corner accent */}
-        <div className="absolute top-4 right-4 w-3 h-3 border-t border-r border-gray-700 z-10" />
-        <div className="absolute bottom-4 left-4 w-3 h-3 border-b border-l border-gray-700 z-10" />
+        <div className="absolute top-4 right-4 w-3 h-3 border-t border-r border-gray-500 z-10 drop-shadow-[0_0_2px_rgba(0,0,0,0.8)]" />
+        <div className="absolute bottom-4 left-4 w-3 h-3 border-b border-l border-gray-500 z-10 drop-shadow-[0_0_2px_rgba(0,0,0,0.8)]" />
       </div>
 
       {/* Content */}
