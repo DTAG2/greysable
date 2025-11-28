@@ -20,6 +20,7 @@ export default function ParticleField() {
   const mouseRef = useRef({ x: -1000, y: -1000 });
   const animationRef = useRef<number | null>(null);
   const timeRef = useRef<number>(0);
+  const lastTimeRef = useRef<number>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -71,9 +72,23 @@ export default function ParticleField() {
       mouseRef.current = { x: -1000, y: -1000 };
     };
 
-    const animate = () => {
-      // Simple fixed time increment - no delta time needed for this effect
-      timeRef.current += 1;
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        // Reset last time when page becomes visible to prevent speed-up
+        lastTimeRef.current = 0;
+      }
+    };
+
+    const animate = (timestamp: number) => {
+      // Calculate delta time and cap it to prevent speed-ups after pauses
+      if (lastTimeRef.current === 0) {
+        lastTimeRef.current = timestamp;
+      }
+      const deltaTime = Math.min(timestamp - lastTimeRef.current, 50); // Cap at 50ms (20fps minimum)
+      lastTimeRef.current = timestamp;
+
+      // Increment time based on delta (normalized to ~60fps)
+      timeRef.current += deltaTime / 16.67;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -127,6 +142,7 @@ export default function ParticleField() {
     window.addEventListener("touchmove", handleTouchMove, { passive: true });
     window.addEventListener("touchend", handleTouchEnd);
     window.addEventListener("mouseleave", handleMouseLeave);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     // Start animation
     animationRef.current = requestAnimationFrame(animate);
@@ -137,6 +153,7 @@ export default function ParticleField() {
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
       window.removeEventListener("mouseleave", handleMouseLeave);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
